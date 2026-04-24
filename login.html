@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Persona OS · Entrar</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="login-page">
+
+    <div class="login-visual">
+      <div class="login-visual-content">
+        <div style="display:flex;justify-content:center;margin-bottom:32px">
+          <img src="logo-Consultoria-BRANCO.png" alt="Persona Consultoria" style="height:40px;width:auto" />
+        </div>
+        <h2>A plataforma que a sua consultoria precisa para escalar.</h2>
+        <p>Diagnóstico estruturado, IA assistiva, plano de ação e acompanhamento — tudo em um cockpit integrado para consultores e clientes.</p>
+        <ul class="login-benefits">
+          <li>Diagnóstico empresarial com score automático</li>
+          <li>Parecer executivo gerado por IA (Claude)</li>
+          <li>Plano de ação com responsáveis e prazos</li>
+          <li>Dashboard separado para consultor e cliente</li>
+          <li>Academy e materiais integrados ao projeto</li>
+          <li>Relatórios executivos em um clique</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="login-form-area">
+      <div class="login-logo" style="justify-content:center">
+        <img src="logo-Consultoria-COR.png" alt="Persona Consultoria" style="height:36px;width:auto" />
+      </div>
+
+      <div class="login-form">
+        <h2>Entrar na plataforma</h2>
+        <p>Acesse com suas credenciais ou use o modo demonstração abaixo.</p>
+
+        <form id="login-form">
+          <div class="form-group">
+            <label class="form-label" for="email">E-mail</label>
+            <input class="form-input" type="email" id="email" placeholder="seu@email.com.br" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="password">Senha</label>
+            <input class="form-input" type="password" id="password" placeholder="••••••••" required autocomplete="current-password" />
+            <div id="login-error" style="display:none;color:var(--red);font-size:.8125rem;margin-top:4px"></div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:8px">
+            Entrar
+          </button>
+          <a href="#" style="font-size:.8125rem;color:var(--text-3);display:block;text-align:center">Esqueci minha senha</a>
+        </form>
+
+        <div class="login-divider">ou acesse em modo demonstração</div>
+
+        <div class="demo-grid" style="grid-template-columns:1fr;gap:8px">
+          <button class="demo-btn" onclick="loginDemo('consultor')">
+            🧑‍💼 Demo Consultor
+            <small>Painel completo de gestão de carteira</small>
+          </button>
+          <button class="demo-btn" onclick="loginDemo('cliente')">
+            🏢 Demo Cliente · Essencial
+            <small>Solidez Industrial — diagnóstico + IA + plano de ação</small>
+          </button>
+          <button class="demo-btn" onclick="loginDemo('free')" style="border-color:rgba(168,85,247,.35);color:var(--text-2)">
+            🆓 Demo Plano Free
+            <small>Veja a experiência gratuita — 1 trilha, sem IA</small>
+          </button>
+        </div>
+
+        <div style="margin-top:24px;padding:14px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);font-size:.75rem;color:var(--text-3)">
+          <strong style="color:var(--text-2)">Credenciais de demonstração:</strong><br/>
+          Consultor: consultor@persona.com.br / persona123<br/>
+          Cliente Essencial: cliente@solidez.com.br / solidez123<br/>
+          Plano Free: free@demo.com.br / free123
+        </div>
+
+        <div style="margin-top:16px;text-align:center">
+          <a href="index.html" style="font-size:.8125rem;color:var(--text-3)">← Voltar ao site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/auth.js"></script>
+  <script>
+    (function() {
+      var existing = Auth.getSession();
+      if (existing) window.location.href = 'platform.html';
+    })();
+
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = document.getElementById('email').value;
+      var pass = document.getElementById('password').value;
+      var err = document.getElementById('login-error');
+      var session = Auth.login(email, pass);
+      if (session) {
+        window.location.href = 'platform.html';
+      } else {
+        err.style.display = 'block';
+        err.textContent = 'E-mail ou senha incorretos. Tente novamente.';
+        setTimeout(function(){ err.style.display = 'none'; }, 4000);
+      }
+    });
+
+    function loginDemo(role) {
+      var session = Auth.loginDemo(role);
+      if (session) window.location.href = 'platform.html';
+    }
+  </script>
+</body>
+</html>

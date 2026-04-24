@@ -1,0 +1,18 @@
+# Documentos internos de planejamento — não subir ao repositório público
+PRD_Persona_Consultoria_MVP.md
+Plano_Produto_Persona_Consultoria.md
+RESUMO_CONTEXTO_PROJETO.md
+Wireframes_Textuais_Persona_Consultoria_MVP.md
+
+# Skills internas do Claude Code
+Skills/
+.claude
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
