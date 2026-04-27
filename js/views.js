@@ -79,11 +79,11 @@ var Views = (function () {
       '<div class="table-wrap"><table><thead><tr><th>Empresa</th><th>Projeto</th><th>Trilhas</th><th>Status</th><th>Score</th><th></th></tr></thead>' +
       '<tbody>' + projectRows + '</tbody></table></div></div>' +
       '<div class="panel ai-box" style="border-color:rgba(168,85,247,.2);background:linear-gradient(135deg,rgba(168,85,247,.06),rgba(66,181,116,.06))">' +
-      '<div class="panel-header"><span class="panel-title" style="display:flex;align-items:center;gap:8px"><span style="font-size:1rem">✨</span>Leitura assistida por IA</span></div>' +
+      '<div class="panel-header"><span class="panel-title" style="display:flex;align-items:center;gap:8px"><span style="font-size:1rem">✨</span>Leitura assistida por IA + time Persona</span></div>' +
       '<div class="panel-body">' +
       '<p class="badge badge-purple" style="margin-bottom:12px">Sugestão priorizada</p>' +
       '<h4 style="font-size:.9375rem;margin-bottom:8px">Concentre o próximo ciclo em rotina comercial e visibilidade financeira.</h4>' +
-      '<p style="font-size:.875rem;color:var(--text-2);line-height:1.65;margin-bottom:14px">4 dos 5 projetos ativos compartilham dois padrões: ausência de CRM operacional e baixa leitura de margem por centro de resultado.</p>' +
+      '<p style="font-size:.875rem;color:var(--text-2);line-height:1.65;margin-bottom:14px">4 dos 5 projetos ativos compartilham dois padrões: ausência de CRM operacional e baixa leitura de margem por centro de resultado. A leitura de IA segue base prática acumulada em mais de 30 anos de consultoria empresarial, com supervisão frequente do time.</p>' +
       '<ul class="solution-features"><li>Padronizar funil comercial em 2 clientes prioritários</li><li>Revisar DRE gerencial em 3 clientes</li><li>Publicar trilha de liderança para equipes críticas</li></ul>' +
       '</div></div></div>' +
       '<div class="content-grid equal">' +
@@ -419,7 +419,7 @@ var Views = (function () {
       '<div class="content-grid equal">' +
       '<div class="panel"><div class="panel-header"><span class="panel-title">Integração com IA</span></div><div class="panel-body">' +
       '<div class="ai-box" style="margin-bottom:16px"><div class="ai-header"><div class="ai-icon">✨</div><div><div class="ai-label">Anthropic Claude</div><div class="ai-title">Análise por IA</div></div></div>' +
-      '<p class="ai-content">A plataforma usa Claude para gerar pareceres executivos dos diagnósticos. Insira sua chave API da Anthropic para habilitar a análise automática.</p></div>' +
+      '<p class="ai-content">A plataforma usa Claude para gerar pareceres executivos dos diagnósticos com base prática acumulada em mais de 30 anos de consultoria empresarial, com supervisão frequente do time Persona. Insira sua chave API da Anthropic para habilitar a análise automática.</p></div>' +
       '<div class="form-group"><div class="form-label">Chave API Anthropic</div>' +
       '<input class="form-input" id="api-key-input" type="password" placeholder="sk-ant-..." value="' + (key || '') + '" />' +
       '<small style="color:var(--text-3);font-size:.75rem;margin-top:4px;display:block">Sua chave fica armazenada localmente no navegador. Obtenha em console.anthropic.com</small></div>' +

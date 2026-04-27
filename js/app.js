@@ -173,7 +173,7 @@ var App = (function () {
         '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">' + fields + '</div></div>';
     }).join('');
     return '<div class="panel"><div class="panel-header"><span class="panel-title">📊 Dados da Empresa</span>' +
-      '<span style="font-size:.8125rem;color:var(--text-3)">Preencha os dados reais para análise precisa pela IA</span></div>' +
+      '<span style="font-size:.8125rem;color:var(--text-3)">Preencha os dados reais para análise precisa pela IA treinada em base prática de 30+ anos</span></div>' +
       '<div class="panel-body" style="padding:20px">' + groups + '</div></div>';
   }
 
@@ -393,20 +393,20 @@ var App = (function () {
       '<div class="panel-body bottleneck-list">' + bottleneckHtml + '</div></div>' +
       '<div id="ai-result-panel" class="ai-box">' +
       '<div class="ai-header"><div class="ai-icon">✨</div>' +
-      '<div><div class="ai-label">Anthropic Claude</div><div class="ai-title">Parecer executivo por IA</div></div>' +
-      (Auth.hasPersonaReview() ? '<span class="badge badge-purple" style="margin-left:auto;font-size:.6875rem">Revisão Persona</span>' : '') +
+      '<div><div class="ai-label">Anthropic Claude</div><div class="ai-title">Parecer executivo por IA + supervisão</div></div>' +
+      (Auth.hasPersonaReview() ? '<span class="badge badge-purple" style="margin-left:auto;font-size:.6875rem">Supervisão Persona</span>' : '') +
       '</div>' +
       '<div id="ai-content" class="ai-content">' +
       (!Auth.canUseAI()
         ? '<div style="text-align:center;padding:16px 0">' +
           '<div style="font-size:1.5rem;margin-bottom:10px">🔒</div>' +
-          '<p style="color:var(--text-2);font-size:.875rem;margin-bottom:16px">Disponível no <strong style="color:var(--text-1)">Plano Essencial</strong>. Faça upgrade e receba análise executiva automática baseada nas suas respostas.</p>' +
+          '<p style="color:var(--text-2);font-size:.875rem;margin-bottom:16px">Disponível no <strong style="color:var(--text-1)">Plano Essencial</strong>. Faça upgrade e receba análise executiva automática baseada em treinamento e conteúdo prático de 30+ anos de consultoria empresarial.</p>' +
           '<button class="btn btn-primary btn-sm" onclick="App.showUpgradeModal()">Ver planos →</button>' +
           '</div>'
         : existingDiag && existingDiag.aiSynthesis
           ? existingDiag.aiSynthesis
           : '<button class="btn btn-primary" id="btn-ai" onclick="App.generateAISynthesis()">✨ Gerar análise com IA</button>' +
-            '<p style="margin-top:10px;font-size:.8125rem;color:var(--text-3)">Clique para gerar um parecer executivo baseado nas respostas.</p>') +
+            '<p style="margin-top:10px;font-size:.8125rem;color:var(--text-3)">Clique para gerar um parecer executivo baseado nas respostas, no acervo prático de 30+ anos e com supervisão frequente do time.</p>') +
       '</div></div></div>';
 
     if (existingDiag && existingDiag.aiSynthesis && !Object.keys(diagnosticAnswers).length) return;
@@ -454,7 +454,7 @@ var App = (function () {
 
     var contentEl = document.getElementById('ai-content');
     if (!contentEl) return;
-    contentEl.innerHTML = '<div class="ai-loading"><div class="spinner"></div>Gerando análise com Claude...</div>';
+    contentEl.innerHTML = '<div class="ai-loading"><div class="spinner"></div>Gerando análise com Claude, base de 30+ anos e supervisão Persona...</div>';
 
     var fullText = '';
     AIService.analyze(
@@ -636,11 +636,11 @@ var App = (function () {
       '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">' +
       '<div style="background:var(--bg-3);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px">' +
       '<div style="font-size:.75rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Essencial · R$ 297/mês</div>' +
-      '<ul class="solution-features"><li>3 trilhas de diagnóstico</li><li>Parecer executivo por IA</li><li>Plano de ação completo</li><li>Academy e materiais</li></ul>' +
+      '<ul class="solution-features"><li>3 trilhas de diagnóstico</li><li>Parecer executivo por IA com base em 30+ anos de consultoria</li><li>Supervisão frequente do time Persona</li><li>Plano de ação completo</li><li>Academy e materiais</li></ul>' +
       '</div>' +
       '<div style="background:var(--bg-3);border:1px solid var(--accent-border);border-radius:var(--r-lg);padding:16px">' +
       '<div style="font-size:.75rem;font-weight:700;color:var(--purple);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Profissional · R$ 697/mês</div>' +
-      '<ul class="solution-features"><li>Tudo do Essencial</li><li>Revisão do time Persona</li><li>Relatórios executivos PDF</li><li>Suporte prioritário</li></ul>' +
+      '<ul class="solution-features"><li>Tudo do Essencial</li><li>Supervisão frequente + revisão dedicada do time Persona</li><li>Relatórios executivos PDF</li><li>Suporte prioritário</li></ul>' +
       '</div>' +
       '</div>' +
       '<p style="font-size:.8125rem;color:var(--text-3);text-align:center">Fale com seu consultor Persona para ativar o upgrade.</p>',

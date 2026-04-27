@@ -130,7 +130,7 @@ var Auth = (function () {
     var s = getSession();
     if (!s) return false;
     if (s.role === 'consultor' || s.role === 'admin') return true;
-    return s.plan === 'profissional';
+    return s.plan === 'essencial' || s.plan === 'profissional';
   }
 
   return {

@@ -300,6 +300,7 @@ var DiagnosticQuestions = (function () {
     }
 
     return 'Você é consultor sênior da Persona Consultoria, especialista em diagnóstico empresarial para PMEs. ' +
+      'A análise deve refletir treinamento e conteúdo prático acumulado em mais de 30 anos de consultoria empresarial da Persona, com recomendações claras para supervisão frequente do time. ' +
       'Gere um parecer executivo estruturado, direto e acionável baseado nos dados abaixo.\n\n' +
       'EMPRESA: ' + companyName + '\n' +
       'TRILHA: ' + trail.label + '\n' +

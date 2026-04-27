@@ -1,6 +1,6 @@
 # Persona Consultoria — Plataforma de Diagnóstico Empresarial
 
-MVP da plataforma SaaS da Persona Consultoria. Guia empresas por trilhas de diagnóstico estruturado, gera pareceres executivos via IA e organiza o plano de ação — tudo em um cockpit integrado para consultores e clientes.
+MVP da plataforma SaaS da Persona Consultoria. Guia empresas por trilhas de diagnóstico estruturado, gera pareceres executivos via IA com base prática acumulada em mais de 30 anos de consultoria empresarial e organiza o plano de ação com supervisão frequente do time — tudo em um cockpit integrado para consultores e clientes.
 
 ---
 
@@ -29,7 +29,7 @@ Três trilhas especializadas, cada uma com coleta de dados reais da empresa + 20
 Score de maturidade (0–100) calculado automaticamente por área.
 
 ### Análise por IA
-Parecer executivo gerado pelo Claude (Anthropic) com base nos dados e respostas preenchidos. O modelo lê os números reais da empresa, identifica gargalos e oportunidades, e entrega um diagnóstico executivo em linguagem clara — disponível nos planos Essencial e Profissional.
+Parecer executivo gerado pelo Claude (Anthropic) com base nos dados e respostas preenchidos. O modelo lê os números reais da empresa, identifica gargalos e oportunidades, e entrega um diagnóstico executivo em linguagem clara com referência prática de mais de 30 anos de consultoria empresarial e supervisão frequente do time Persona — disponível nos planos Essencial e Profissional.
 
 ### Plano de ação
 Ações priorizadas por trilha com responsável, prazo, prioridade (alta/média/baixa) e status de acompanhamento (pendente/em andamento/concluída).
@@ -50,8 +50,8 @@ Visão de carteira completa: empresas, projetos, status de diagnóstico por tril
 | Plano | Trilhas | IA | Revisão humana | Preço |
 |---|---|---|---|---|
 | **Free** | 1 trilha | Não | Não | Gratuito |
-| **Essencial** | 3 trilhas | Sim (Claude) | Não | R$ 297/mês |
-| **Profissional** | 3 trilhas + ciclos ilimitados | Sim (Claude) | Sim — 48h | R$ 697/mês |
+| **Essencial** | 3 trilhas | Sim (Claude) | Sim — supervisão frequente | R$ 297/mês |
+| **Profissional** | 3 trilhas + ciclos ilimitados | Sim (Claude) | Sim — supervisão frequente + revisão dedicada em 48h | R$ 697/mês |
 
 ---
 
@@ -134,7 +134,7 @@ A autenticação é mock — nenhum dado é enviado a servidor. Tudo fica em mem
 |---|---|---|---|
 | Consultor | `consultor@persona.com.br` | `persona123` | Acesso total à carteira |
 | Cliente Essencial | `cliente@solidez.com.br` | `solidez123` | 3 trilhas + IA |
-| Cliente Profissional | `pro@demo.com.br` | `pro123` | Essencial + revisão humana |
+| Cliente Profissional | `pro@demo.com.br` | `pro123` | Essencial + supervisão frequente + revisão dedicada |
 | Cliente Free | `free@demo.com.br` | `free123` | 1 trilha, sem IA |
 
 Na tela de login há botões de acesso rápido para cada perfil — não é necessário digitar as credenciais.
@@ -143,7 +143,7 @@ Na tela de login há botões de acesso rápido para cada perfil — não é nece
 
 ## Configurar a análise por IA
 
-A integração usa a API da Anthropic (Claude Haiku). Para ativar:
+A integração usa a API da Anthropic (Claude Haiku), orientada por base prática de 30+ anos de consultoria empresarial e supervisão frequente da equipe Persona. Para ativar:
 
 1. Acesse a plataforma com um perfil Essencial, Profissional ou Consultor
 2. Clique no ícone **⚙ Configurações** no topo da barra lateral
